@@ -3,7 +3,6 @@ package com.PonyBoy.CrudAppBoot.service;
 import com.PonyBoy.CrudAppBoot.dao.UserDAO;
 import com.PonyBoy.CrudAppBoot.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -22,29 +21,29 @@ public class UserServiceImpl implements UserService {
     @Transactional
     @Override
     public void createUser(User user) {
-        userDao.createUser(user);
+        userDao.save(user);
     }
 
     @Transactional
     @Override
     public void deleteUser(Long id) {
-        userDao.deleteUser(id);
+        userDao.deleteById(id);
     }
 
     @Transactional
     @Override
     public void updateUser(User user) {
-        userDao.updateUser(user);
+        userDao.save(user);
     }
 
 
     @Override
     public User getUserById(Long id) {
-        return userDao.getUserById(id);
+        return userDao.getOne(id);
     }
 
     @Override
     public List<User> listUsers() {
-        return userDao.listUsers();
+        return userDao.findAll();
     }
 }
