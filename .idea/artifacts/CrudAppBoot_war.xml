@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="CrudAppBoot:war">
+    <output-path>$PROJECT_DIR$/CrudAppBoot/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>CrudAppBoot</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="spring_mvc.war">
+      <element id="artifact" artifact-name="CrudAppBoot:war exploded" />
+    </root>
+  </artifact>
+</component>
